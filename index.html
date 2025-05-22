@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QL Desine | Design Studio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  
+  <style>
+
+    body {
+      background-color: #000000;
+      color: white;
+      
+    }
+
+    /* nav bar starting */
+    .navbar {
+          text-shadow: 0 0 3px #242bfb, 0 0 15px rgb(45, 159, 45);
+        background: #180b25;
+      color: white;
+      padding: 2px 40px;
+      border-radius: 20px;
+      margin: 45px auto;
+      width: 90%;
+      max-width: 1500px;
+      
+ box-shadow:
+  0 0 10px #ffffff, 0 0 30px #242bfb,
+  0 0 40px #242bfb, 0 0 60px #242bfb, 0 0 0px #242bfb;
+
+     }
+    .navbar h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .content {
+      padding: 40px;
+      height: 1500px;
+    }
+    .navbar-dark .nav-link:hover {
+    color: #e8e8e8 !important;
+    }
+    .navbar-brand{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal 
+    }
+    .nav-link {
+    color: #000000 !important;
+    }
+    .nav-link:hover {
+    text-decoration: underline;
+    }
+    .navbar-dark .nav-link {
+    color: #f0ecec !important;
+     transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+    }
+  .navbar-dark .nav-link:hover {
+  
+  text-shadow: 0 0 8px #ffffff, 0 0 15px limegreen;
+  transform: scale(1.1);
+  }
+/* nav bar ending */
+.ban {
+    background-image: url(https://assets.onecompiler.app/43c669cnw/43je3ze38/dd.jpg);
+    padding: 200px;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    text-shadow: 0 0 8px #242bfb, 0 0 15px limegreen;
+    font-size: 36px; /* ✅ Increase text size here */
+    color: white;     /* ✅ Optional: Make text visible on background */
+    text-align: center; /* Optional: Center text */
+}
+
+.main-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Responsive typography */
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 3rem;
+  }
+}
+  .ban h1 {
+    font-size: 60px; /* increase as needed */
+    color: white;    /* ensures text is visible on dark background */
+    text-shadow: 0 0 8px #242bfb, 0 0 15px limegreen; /* keep your glowing effect */
+}
+
+    .service-card {
+      background-color: #1e1e1e;
+      border: none;
+      border-radius: 15px;
+      padding: 20px;
+      height: 100%;
+    }
+    .service-card h5 {
+      color: #f8f9fa;
+    }
+   
+    .service-card p {
+      color: #cfcfcf;
+    }/* General Styles */
+.scroll-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+/* Hide scrollbar for Webkit browsers */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cards */
+.design-card {
+    display: flex;
+  gap: 20px; /* Adjust spacing as needed */
+  flex: 0 0 auto;
+  margin: 45px;
+  border-radius: 10px;
+  overflow: hidden;
+  scroll-snap-align: center;
+  background-color: #111;
+  box-shadow: 0 0 10px rgba(0,255,255,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: grab; /* indicate draggable */
+  background-image: url(https://assets.onecompiler.app/43c669cnw/43jfgr3xe/desktop-wallpaper-black-blue-shards-blue-black_PhotoGrid.png);
+}
+.van{
+  background-image: url(https://assets.onecompiler.app/43c669cnw/43jfgr3xe/desktop-wallpaper-black-blue-shards-blue-black_PhotoGrid.png);
+}
+.design-card:active {
+  cursor: grabbing;
+}
+
+/* Hover effect: scale up + stronger glow */
+.design-card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 10px #ffffff,
+    0 0 30px #242bfb,
+    0 0 40px #242bfb,
+    0 0 60px #242bfb,
+    0 0 0px #242bfb;
+}
+
+
+/* Aspect Ratios */
+.aspect-16-9 {
+  width: 300px;
+  aspect-ratio: 16 / 9;
+}
+.aspect-21-9 {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 21 / 9;
+}
+.aspect-square {
+  width: 250px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Thumbnails: show 2 */
+.thumbnail-scroll .design-card {
+  width: 300px;
+}
+
+/* Banners: show 1 */
+.banner-scroll .design-card {
+  width: 600px;
+}
+
+/* 3D Art: responsive */
+.art-scroll .design-card {
+  width: 250px;
+}
+@media (max-width: 768px) {
+  .banner-scroll .design-card {
+    width: 90vw;
+  }
+  .thumbnail-scroll .design-card,
+  .art-scroll .design-card {
+    width: 80vw;
+  }
+}
+
+/* Headings */
+.section-title {
+
+  font-size: 36px;
+  color:#ffffff ;
+  text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #242bfb,
+    0 0 20px #242bfb,
+    0 0 40px #242bfb;
+}
+.sub-title {
+  color: #ffffff;
+  font-size: 24px;
+}.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer h2,
+.footer h3 {
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00f0ff;
+}
+
+/* Social Icons */
+.social-icon i {
+  font-size: 22px;
+  margin: 0 8px;
+  color: #fff;
+  text-shadow:
+    0 0 5px #00f0ff,
+    0 0 10px #00f0ff;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icon:hover i {
+  transform: scale(1.2);
+  text-shadow:
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Navbar Container */
+.navbara {
+  background: #180b25;
+  color: white;
+  padding: 2px 40px;
+  border-radius: 20px;
+  margin: 45px auto;
+  width: 90%;
+  max-width: 1500px;
+
+  /* Glow Shadow */
+  text-shadow: 0 0 3px #242bfb, 0 0 15px rgb(45, 159, 45);
+  box-shadow:
+    0 0 10px #ffffff,
+    0 0 30px #242bfb,
+    0 0 40px #242bfb,
+    0 0 60px #242bfb;
+}
+
+/* Brand/Logo */
+.navbara h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Font Styling for Brand */
+.navbara-brand {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Page Content Styling */
+.content {
+  padding: 40px;
+  height: 1500px; /* Remove if unnecessary */
+}
+
+/* Nav Link Base Style */
+.nava-link {
+  color: #f0ecec !important;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover Effects */
+.nava-link:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 8px #ffffff, 0 0 15px limegreen;
+  transform: scale(1.1);
+}
+/* Service Cards Container */
+.row.text-center {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Individual Service Card */
+.service-card {
+  background-image: url(https://assets.onecompiler.app/43c669cnw/43jfgr3xe/desktop-wallpaper-black-blue-shards-blue-black_PhotoGrid.png);
+   margin-bottom: 20px; /* vertical gap */
+  background-color: #1a1a1a;
+  color: #eee;
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 0 10px #242bfb33;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Card Titles */
+.service-card h5 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+/* Card Description */
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+/* Hover Zoom + Glow Effect */
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 10px #ffffff,
+    0 0 30px #242bfb,
+    0 0 40px #242bfb,
+    0 0 60px #242bfb,
+    0 0 0px #242bfb;
+}
+
+/* Pricing Cards Container */
+.pricing-card {
+  background: #1f1f2e;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1),
+              0 0 20px #242bfb,
+              0 0 30px #242bfb;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.pricing-card:hover {
+  transform: scale(1.05);
+}
+
+/* Heading */
+.pricing-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+/* Price */
+.pricing-card .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #47ff47;
+  margin: 10px 0;
+}
+
+/* Features List */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.pricing-card ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Subscribe Button */
+.btn-custom {
+  background: #242bfb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #242bfb;
+  transition: background 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #1b1bd1;
+}
+/* Pricing Cards Container in Flex Layout */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  padding: 40px;
+}
+
+/* Individual Pricing Card */
+.pricing-card {
+  background: #1f1f2e;
+  border-radius: 16px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1),
+              0 0 20px #242bfb,
+              0 0 30px #242bfb;
+  transition: transform 0.3s ease;
+  text-align: center;
+  flex: 1 1 300px; /* Makes them responsive */
+}
+
+.pricing-card:hover {
+  transform: scale(1.05);
+}
+
+/* Heading */
+.pricing-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+/* Price */
+.pricing-card .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #47ff47;
+  margin: 10px 0;
+}
+
+/* Features List */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.pricing-card ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Subscribe Button */
+.btn-custom {
+  background: #242bfb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #242bfb;
+  transition: background 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #1b1bd1;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">QL Desine</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#logoCarousel">Logo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#video-editing">Video Edit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#thumbnails">Thumbnails</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="ban">
+  <h1 class="main-title">QL Desine | Design Studio</h1>
+</div>
+
+
+<section class="design-section py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5"> Thumbnails & Banners</h2>
+
+    <!-- Thumbnails -->
+    <h3 class="sub-title mb-3"> YouTube Thumbnails</h3>
+    <div class="scroll-container thumbnail-scroll">
+      <div class="design-card aspect-16-9"><img src="https://i.postimg.cc/rwtqrMMW/b-IUMJla-Nlyo-HD.jpg" alt=""></div>
+      <div class="design-card aspect-16-9"><img src="https://i.postimg.cc/NjmNWzQm/a6-RPmn2hn3-Q-HD.jpg" alt=""></div>
+      <div class="design-card aspect-16-9"><img src="https://i.postimg.cc/TY4VCqmm/n-OPEl-QU3-Yt-E-HD.jpg" alt=""></div>
+      <div class="design-card aspect-16-9"><img src="https://media.licdn.com/dms/image/v2/D4E22AQHQvzUZF3y48g/feedshare-shrink_800/B4EZZn582FHkAg-/0/1745499972791?e=1750896000&v=beta&t=VhGtUkZO0QpB14_l9wGWSQ1jAOU1APuYGgxJu13TGBA" alt=""></div>
+      <div class="design-card aspect-16-9"><img src="https://i.postimg.cc/nLCcTB4s/6-Uik-Wlf-ON2s-HD.jpg" alt=""></div>
+    </div>
+
+    <!-- Banners -->
+    <h3 class="sub-title mb-3">Banners</h3>
+    <div class="scroll-container banner-scroll">
+      <div class="design-card aspect-21-9"><img src="https://img.freepik.com/free-vector/gradient-youtube-banner_23-2149200448.jpg?ga=GA1.1.1959783904.1747205418&semt=ais_hybrid&w=740" width="100%" alt=""></div>
+      <div class="design-card aspect-21-9"><img src="https://img.freepik.com/free-vector/gradient-halftone-technology-twitch-banner_23-2149195837.jpg?ga=GA1.1.1959783904.1747205418&semt=ais_hybrid&w=740" width="100%"></div>
+      <div class="design-card aspect-21-9"><img src="https://img.freepik.com/free-psd/gaming-template-design_23-2151737776.jpg?ga=GA1.1.1959783904.1747205418&semt=ais_hybrid&w=740" width="100%" alt=""></div>
+      <div class="design-card aspect-21-9"><img src="https://img.freepik.com/premium-photo/colorful-illumination-table-depicts-colored-gaming-accessories-computer-game-playing-esports-business-online-world-are-all-depicted_1257429-61113.jpg?ga=GA1.1.1959783904.1747205418&semt=ais_hybrid&w=740"width="100%"alt=""></div>
+      <div class="design-card aspect-21-9"><img src="https://img.freepik.com/premium-psd/sport-youtube-banner-channel-template_220346-5702.jpg?ga=GA1.1.1959783904.1747205418&semt=ais_hybrid&w=740" width="100%" alt=""></div>
+    </div>
+
+</section>
+
+    <!-- UI/UX Mockups 
+    <h2 class="section-title text-center mb-4">UI/UX Mockups</h2>
+    <div class="row text-center mb-5">
+      <div class="col-md-6 mb-3">
+        <h5>Mobile Design</h5>
+        <img src="mobile-mockup.png" class="img-fluid rounded" alt="Mobile UI Design">
+      </div>
+      <div class="col-md-6 mb-3">
+        <h5>Web Design</h5>
+        <img src="web-mockup.png" class="img-fluid rounded" alt="Web UI Design">
+      </div>
+    </div>
+</div>-->
+<!-- Pricing Cards Wrapper -->
+<div class="pricing-container">
+
+  <!-- Basic Plan -->
+  <div class="pricing-card">
+    <h3>Basic Plan</h3>
+    <p class="price">₹599 / year</p>
+    <ul>
+      <li>Per Month: 10 thumbnails</li>
+      <li>5 banners per month</li>
+      <li>Content writing: 3 articles/month</li>
+    </ul>
+<a class="btn btn-custom" 
+   href="https://docs.google.com/forms/d/1YjlJK27MuABSplyYa12S0bWfNfoA6Vk67FJme8ez66E/edit?usp=forms_home&ouid=115690080656784817407&ths=true" 
+   target="_blank">
+   Subscribe
+</a>
+
+  </div>
+
+  <!-- 3 Month Video Editing Plan -->
+  <div class="pricing-card">
+    <h3>3-Month Video Editing</h3>
+    <p class="price">₹1500 / 3 months</p>
+    <ul>
+      <li>Each month: 8 videos</li>
+      <li>Each video: up to 15 minutes</li>
+      <li>Includes reels editing</li>
+    </ul>
+    <a class="btn btn-custom" 
+   href="https://docs.google.com/forms/d/1YjlJK27MuABSplyYa12S0bWfNfoA6Vk67FJme8ez66E/edit?usp=forms_home&ouid=115690080656784817407&ths=true" 
+   target="_blank">
+   Subscribe
+</a>
+
+  </div>
+
+  <!-- Premiere Pro Advanced Plan -->
+  <div class="pricing-card">
+    <h3>Advanced Editing (Premiere Pro)</h3>
+    <p class="price">₹5000 / month</p>
+    <ul>
+      <li>4 videos per month</li>
+      <li>High-level professional editing</li>
+      <li>Software: Adobe Premiere Pro</li>
+      <li>Cost may vary by country</li>
+    </ul>
+<a class="btn btn-custom" 
+   href="https://docs.google.com/forms/d/1YjlJK27MuABSplyYa12S0bWfNfoA6Vk67FJme8ez66E/edit?usp=forms_home&ouid=115690080656784817407&ths=true" 
+   target="_blank">
+   Subscribe
+</a>
+
+  </div>
+
+</div>
+
+    <!-- Video Editing Samples -->
+    <h2 class="section-title text-center mb-4" id="video-editing">Video Editing Samples</h2>
+    <div class="row text-center align-items-center">
+      <div class="col-md-6 mb-3">
+        <h6>Before</h6>
+        <img src="https://youtube.com/shorts/6tKFsOnz9XA?si=CP9vzaGBepsXSK4O" class="img-fluid rounded" alt="Before Edit">
+      </div>
+      <div class="col-md-6 mb-3">
+        <h6>After</h6>
+        <img src="video-after.gif" class="img-fluid rounded" alt="NOT SUPPORT">
+      </div>
+    </div>
+
+<section class="">
+  
+    <!-- Services Section -->
+    <h2 class="section-title text-center my-5" id="services">Our Services</h2>
+    <div class="row text-center mb-5">
+      <div class="col-md-4 mb-4">
+        <div class="card service-card">
+          
+          <div class="section-title"><h5>Logo Design</h5></div>
+          <p>Creative and unique logos that establish your brand identity.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card service-card">
+          
+          <div class="section-title"><h5>UI/UX Design</h5></div>
+          <p>Modern and responsive design for both mobile and web applications.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card service-card">
+          
+          <div class="section-title"><h5>Video Editing</h5></div>
+          <p>Professional video editing with engaging effects and transitions.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card service-card">
+          
+          <div class="section-title"><h5>3D Art</h5></div>
+          <p>Custom 3D models and visuals for your creative projects.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card service-card">
+          
+          <div class="section-title"><h5>Thumbnails & Banners</h5> </div>
+          <p>Eye-catching designs to boost your YouTube and social media presence.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card service-card">
+          <div class="section-title"><h5>Poster Design</h5></div>
+          
+          <p>Striking posters tailored for promotional events, film releases, and more.</p>
+        </div>
+      </div>
+    </div>
+
+</section>
+  <footer class="navbara navbara-expand-lg navbara-dark" id="contact">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="section-title">Q L Designs</h2>
+      <p>Crafting quality. Designing futures.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3 class="section-title">Quick Links</h3>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#thumbnails">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3 class="section-title">Follow Us</h3>
+      <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com/q_l_designs" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.threads.net" target="_blank" class="social-icon"><i class="fab fa-threads"></i></a> <!-- Replace with SVG if needed -->
+      <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom text-center mb-4">
+    <p>&copy; 2025 Q L Designs. All rights reserved.</p>
+  </div>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function autoScroll(containerSelector, scrollAmount, interval) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    let scrollPos = 0;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    setInterval(() => {
+      scrollPos += scrollAmount;
+      if (scrollPos > maxScroll) {
+        scrollPos = 0; // reset to start for infinite loop
+      }
+      container.scrollTo({
+        left: scrollPos,
+        behavior: 'smooth'
+      });
+    }, interval);
+  }
+
+  // Scroll amount can be width of one card + gap (300px + 20px for thumbnails)
+  // For banners (600px + 20px)
+  document.addEventListener('DOMContentLoaded', () => {
+    autoScroll('.thumbnail-scroll', 320, 5000); // every 5 seconds
+    autoScroll('.banner-scroll', 620, 6000);    // every 6 seconds
+  });
+</script>
+<script>
+  function makeScrollableByDrag(containerSelector) {
+    const slider = document.querySelector(containerSelector);
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    if (!slider) return;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; // scroll-fast
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    makeScrollableByDrag('.thumbnail-scroll');
+    makeScrollableByDrag('.banner-scroll');
+    makeScrollableByDrag('.art-scroll');
+  });
+</script>
+
+</body>
+</html>
